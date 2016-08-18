@@ -3,8 +3,9 @@ import os
 import webbrowser
 import json
 
-#shortcuts = {}
+# shortcuts = {}
 shortcuts = json.load(open('shortcuts.json'))
+
 
 def launch(event):
     command = ent.get()
@@ -30,17 +31,16 @@ def launch(event):
 root = Tk()
 root.title('App Launch', )
 
-
-w = 250 # width for the Tk root
-h = 30 # height for the Tk root
+w = 250  # width for the Tk root
+h = 30  # height for the Tk root
 
 # get screen width and height
-ws = root.winfo_screenwidth() # width of the screen
-hs = root.winfo_screenheight() # height of the screen
+ws = root.winfo_screenwidth()  # width of the screen
+hs = root.winfo_screenheight()  # height of the screen
 
 # calculate x and y coordinates for the Tk root window
-x = (ws/2) - (w/2)
-y = ((hs/2) - (h/2)) + 50
+x = (ws / 2) - (w / 2)
+y = ((hs / 2) - (h / 2)) + 50
 
 # set the dimensions of the screen
 # and where it is placed
@@ -52,10 +52,7 @@ ent.pack(side=TOP)
 
 ent.bind('<Return>', launch)
 
-root.attributes('-topmost',True)
-root.after_idle(root.attributes,'-topmost',False)
+root.attributes('-topmost', True)
+root.after_idle(root.attributes, '-topmost', False)
 
 root.mainloop()
-
-
-

@@ -15,10 +15,12 @@ api = tweepy.API(auth)
 filename = 'handles.txt'
 message = ''
 
+
 def add_handle(new_handle):
     handles = open(filename, 'a')
     handles.write(new_handle)
     handles.close()
+
 
 def mass_tweet(message):
     tweet_list = open(filename, "r")
@@ -30,6 +32,7 @@ def mass_tweet(message):
         s = api.update_status(m)
         nap = randint(1, 60)
         time.sleep(nap)
+
 
 top = Tk()
 top.title('Digital Lobbyist')

@@ -1,8 +1,11 @@
-import os, sys
-import signal
+"""
+Type any command at the prompt to execute immediately
+and to add that command to this program to be executed
+whenever it is run in the future
+"""
+
 
 def code_self():
-    #print('Beginning process:', os.getpid())
     commands = []
     new_code = []
     while True:
@@ -13,7 +16,8 @@ def code_self():
             new_code.append(append_code)
             append_code = '    ' + append_code
             commands.append(append_code)
-        else: break
+        else:
+            break
     if new_code:
         file = open('self_command.py', 'w')
         file.write('import os, signal, sys\n' + 'def new_commands():\n')
@@ -27,8 +31,9 @@ def code_self():
         from self_command import new_commands
         new_commands()
 
+
 if __name__ == '__main__':
     code_self()
-#Append new code here:
+    # Append new code here:
 
-    print("hello world")
+    print("hello world!")

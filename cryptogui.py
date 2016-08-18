@@ -3,27 +3,27 @@ from tkinter.messagebox import showinfo
 
 
 def binary(text):
-    #text = input('Enter message to encode: ')
     alpha = ' abcdefghijklmnopqrstuvwxyz'
     text = text.lower()
     cipher = ''
     binumd = {}
+
     for x in range(32):
         binumd[x] = ''
         y = x
-        for n in range(4,-1,-1):
-            if y >= 2**n:
-                binumd[x] = binumd[x] + '1'
-                y -= 2**n
+        for n in range(4, -1, -1):
+            if y >= 2 ** n:
+                binumd[x] += '1'
+                y -= 2 ** n
             else:
-                binumd[x] = binumd[x] + '0'
+                binumd[x] += '0'
 
     for symb in text:
         indx = alpha.find(symb)
-        bin = binumd[indx]
-        cipher = cipher + bin + ' '
-    #print(cipher)
+        binr = binumd[indx]
+        cipher = cipher + binr + ' '
     showinfo(title='Encrypted Code', message=cipher)
+
 
 top = Tk()
 top.title('Binary Encoder')

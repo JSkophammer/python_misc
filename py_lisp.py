@@ -64,5 +64,6 @@ if __name__ == '__main__':
     while True:
         exp = input('LISP> ')
         if exp != 'q':
-            print(lisp(exp),'\n')
-        else: break
+            print(lisp(exp), '\n')
+        else:
+            break
